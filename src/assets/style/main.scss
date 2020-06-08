@@ -1,0 +1,258 @@
+@import "./font.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --text-color: #a3a3a3;
+  --text-color-hover: #000000;
+  --main-background: #f0efef;
+  --font-title: "manrope", sans-serif;
+}
+
+p {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+body,
+html {
+  font-family: var(--font-title);
+  color: var(--text-color);
+  background: var(--main-background);
+}
+
+body {
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+.title {
+  font-size: 68px;
+  line-height: 93px;
+}
+
+.display {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main {
+  height: 100%;
+  background: linear-gradient(
+    179.85deg,
+    #d77e92 0.37%,
+    rgba(184, 158, 156, 0.435764) 61.89%,
+    rgba(216, 215, 214, 0) 103.74%
+  );
+
+  &.purple {
+    &:before {
+      background: linear-gradient(
+        179.86deg,
+        #907ed7 0.37%,
+        rgba(177, 156, 184, 0.435764) 61.89%,
+        rgba(216, 215, 214, 0) 103.74%
+      );
+      opacity: 1;
+      transition: opacity 0.5s linear;
+    }
+  }
+
+  &:before {
+    opacity: 0;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+a {
+  font-weight: bold;
+  color: var(--text-color);
+
+  &:hover {
+    color: var(--text-color-hover);
+  }
+}
+
+#menu {
+  position: fixed;
+  left: 40px;
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+}
+
+ul.menu-items {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  padding-left: 13.47vw;
+  padding-right: 9.05vw;
+  padding-top: 7.81vh;
+  height: calc(100vh - 27.08vh);
+
+  li {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  span {
+    display: block;
+    transform: translateY(100%);
+    font-size: 13vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+    font-weight: bold;
+  }
+
+  &.start li {
+    &:nth-child(1) span {
+      transition-delay: 220ms;
+    }
+    &:nth-child(2) span {
+      transition-delay: 320ms;
+    }
+    &:nth-child(3) span {
+      transition-delay: 420ms;
+    }
+    &:nth-child(4) span {
+      transition-delay: 520ms;
+    }
+    &:nth-child(5) span {
+      transition-delay: 620ms;
+    }
+
+    span {
+      transform: translateY(0);
+      transition: transform 250ms ease-in-out;
+    }
+  }
+
+  &.leave li {
+    &:nth-child(1) span {
+      transition-delay: 220ms;
+    }
+    &:nth-child(2) span {
+      transition-delay: 320ms;
+    }
+    &:nth-child(3) span {
+      transition-delay: 420ms;
+    }
+    &:nth-child(4) span {
+      transition-delay: 520ms;
+    }
+    &:nth-child(5) span {
+      transition-delay: 620ms;
+    }
+
+    span {
+      transform: translateY(-100%);
+      transition: transform 250ms ease-in-out;
+    }
+  }
+}
+
+#msg-shy {
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
+  right: 80px;
+  top: 80px;
+  position: fixed;
+}
+
+#scroll {
+  transform: rotate(-90deg);
+  cursor: pointer;
+  right: 80px;
+  bottom: 80px;
+  position: fixed;
+}
+
+figure {
+  position: relative;
+  display: inline-flex;
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  span {
+    color: white;
+    font-weight: bold;
+    font-size: 120px;
+  }
+}
+
+.panel {
+  opacity: 0;
+  transform: translateY(5%);
+  transition: transform 1s ease-out, opacity 1s linear;
+  visibility: hidden;
+  &.active {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+#home {
+  color: black;
+}
+
+#bio {
+  padding: 15.62vh 0;
+
+  .body {
+    padding: 15.62px 13.47vw;
+    display: flex;
+
+    > div {
+      :first-child {
+        margin-right: 170px;
+      }
+    }
+
+    .title {
+      color: black;
+      text-transform: capitalize;
+      margin-bottom: 129px;
+    }
+
+    .display {
+      text-transform: uppercase;
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+
+    figure {
+      margin-bottom: 150px;
+    }
+  }
+}
