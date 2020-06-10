@@ -6,19 +6,29 @@
 }
 
 :root {
-  --text-color: #a3a3a3;
+  --text-color: #ffffff;
   --text-color-hover: #000000;
   --main-background: #f0efef;
+  --main-menu-color: var(--text-color-hover);
+  --main-menu-color-hover: var(--text-color-hover);
   --font-title: "manrope", sans-serif;
+  --project-title: #000000;
+  --project-tags: #fafafa;
 }
 
 p {
   font-size: 20px;
   line-height: 25px;
+
+  b,
+  strong {
+    color: var(--text-color-hover);
+  }
 }
 
 body,
 html {
+  height: 100%;
   font-family: var(--font-title);
   color: var(--text-color);
   background: var(--main-background);
@@ -45,25 +55,45 @@ a {
   text-decoration: none;
 }
 
-#main {
+#background {
+  position: fixed;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(
-    179.85deg,
-    #d77e92 0.37%,
-    rgba(184, 158, 156, 0.435764) 61.89%,
-    rgba(216, 215, 214, 0) 103.74%
-  );
+  background: linear-gradient(270deg, #d77e92, #907ed7, #7eccd7);
+  background-size: 400% 400%;
+  animation: bgAnimation 45s ease infinite;
 
-  &.purple {
-    &:before {
-      background: linear-gradient(
-        179.86deg,
-        #907ed7 0.37%,
-        rgba(177, 156, 184, 0.435764) 61.89%,
-        rgba(216, 215, 214, 0) 103.74%
-      );
-      opacity: 1;
-      transition: opacity 0.5s linear;
+  @-webkit-keyframes bgAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes bgAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes bgAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
@@ -87,7 +117,7 @@ a {
   }
 }
 
-#menu {
+#virtues {
   position: fixed;
   left: 40px;
   top: 40px;
@@ -95,7 +125,7 @@ a {
   bottom: 40px;
 }
 
-ul.menu-items {
+ul.virtues-items {
   display: block;
   display: flex;
   flex-direction: column;
@@ -174,7 +204,48 @@ ul.menu-items {
   transform-origin: bottom right;
   right: 80px;
   top: 80px;
+  color: var(--main-menu-color);
   position: fixed;
+
+  &:hover {
+    color: var(--main-menu-color-hover);
+  }
+}
+
+#menu {
+  transform: rotate(90deg);
+  transform-origin: top left;
+  left: 80px;
+  top: 80px;
+  color: var(--main-menu-color);
+  position: fixed;
+  z-index: 1;
+
+  ul {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    li {
+      list-style: none;
+      margin: 0px 5px;
+
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--main-menu-color);
+
+        &:hover {
+          color: var(--main-menu-color-hover);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    color: var(--main-menu-color-hover);
+  }
 }
 
 #scroll {
@@ -183,6 +254,11 @@ ul.menu-items {
   right: 80px;
   bottom: 80px;
   position: fixed;
+  color: var(--main-menu-color);
+
+  &:hover {
+    color: var(--main-menu-color-hover);
+  }
 }
 
 figure {
@@ -208,14 +284,20 @@ figure {
 }
 
 .panel {
+  width: 100%;
+  position: absolute;
   opacity: 0;
   transform: translateY(5%);
-  transition: transform 1s ease-out, opacity 1s linear;
+  transition: transform 500ms ease-out, opacity 500ms linear;
   visibility: hidden;
   &.active {
     visibility: visible;
     transform: translateY(0%);
     opacity: 1;
+  }
+  &.old {
+    transform: translateY(-5%);
+    opacity: 0;
   }
 }
 
@@ -223,36 +305,5 @@ figure {
   color: black;
 }
 
-#bio {
-  padding: 15.62vh 0;
-
-  .body {
-    padding: 15.62px 13.47vw;
-    display: flex;
-
-    > div {
-      :first-child {
-        margin-right: 170px;
-      }
-    }
-
-    .title {
-      color: black;
-      text-transform: capitalize;
-      margin-bottom: 129px;
-    }
-
-    .display {
-      text-transform: uppercase;
-    }
-  }
-
-  header {
-    display: flex;
-    justify-content: center;
-
-    figure {
-      margin-bottom: 150px;
-    }
-  }
-}
+@import "./bio.scss";
+@import "./projects.scss";

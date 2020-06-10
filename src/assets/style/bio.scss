@@ -1,0 +1,41 @@
+#bio {
+  padding: 15.62vh 0;
+
+  .body {
+    padding: 15.62px 13.47vw;
+    display: flex;
+
+    > div {
+      &:first-child {
+        margin-right: 170px;
+      }
+
+      p {
+        margin-top: 100px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .title {
+      color: black;
+      text-transform: capitalize;
+      margin-bottom: 129px;
+    }
+
+    .display {
+      text-transform: uppercase;
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+
+    figure {
+      margin-bottom: 150px;
+    }
+  }
+}

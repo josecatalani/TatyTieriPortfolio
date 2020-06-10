@@ -1,0 +1,84 @@
+#projects {
+  padding: 15.62vh 0;
+  > header {
+    display: flex;
+    justify-content: center;
+
+    figure {
+      margin-bottom: 150px;
+    }
+  }
+
+  .project-item {
+    padding-left: 13.47vw;
+    padding-right: 9.05vw;
+    margin-top: 150px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    header {
+      padding: 20px 0px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: var(--project-title);
+
+      .project-stats {
+        width: 50px;
+        margin-right: 30px;
+
+        span {
+          display: block;
+          text-align: right;
+          font-size: 14px;
+          margin-top: 10px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .project-title {
+        h2 {
+          font-size: 68px;
+          font-weight: normal;
+        }
+      }
+    }
+
+    .body {
+      padding-left: 80px;
+      display: flex;
+
+      > div {
+        flex: 1;
+
+        p {
+          margin-top: 50px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .project-tags {
+        ul {
+          list-style: none;
+
+          li {
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 10px 0px 0px;
+            color: var(--project-tags);
+          }
+        }
+      }
+    }
+  }
+}
