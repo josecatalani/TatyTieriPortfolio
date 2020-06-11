@@ -60,16 +60,11 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
+              name: "[name].[ext]",
               outputPath: "assets/images/",
             },
           },
         ],
-      },
-      // Shaders
-      {
-        test: /\.(glsl|vs|fs|vert|frag)$/,
-        exclude: /node_modules/,
-        use: ["raw-loader", "glslify-loader"],
       },
     ],
   },
