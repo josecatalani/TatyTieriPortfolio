@@ -3,8 +3,8 @@ backend:
 show_preview_links: true
 display_url: https://tiery.com.br/
 site_url: https://tiery.com.br/
-media_folder: "assets/images"
-public_folder: "images"
+media_folder: "src/assets/images"
+public_folder: "assets/images"
 slug:
   encoding: "ascii"
   clean_accents: true
