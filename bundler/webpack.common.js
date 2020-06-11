@@ -10,7 +10,13 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "../static") }]),
+    new CopyWebpackPlugin([
+      { from: path.resolve(__dirname, "../static") },
+      {
+        from: path.resolve(__dirname, "../src/admin"),
+        to: "admin",
+      },
+    ]),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/index.html"),
       minify: true,

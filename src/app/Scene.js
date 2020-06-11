@@ -82,7 +82,13 @@ export default class Scene {
     this.homePanel = document.getElementById("home");
     this.projectsPanel = document.getElementById("projects");
     this.bioPanel = document.getElementById("bio");
-    this.panels = [this.homePanel, this.bioPanel, this.projectsPanel];
+    this.worksPanel = document.getElementById("works");
+    this.panels = [
+      this.homePanel,
+      this.bioPanel,
+      this.projectsPanel,
+      this.worksPanel,
+    ];
   }
 
   setInitialAnimations() {
