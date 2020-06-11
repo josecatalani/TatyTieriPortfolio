@@ -25,7 +25,6 @@ collections:
           default: "project",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Caption", name: "caption", widget: "string" }
       - {
           label: "Project Date",
           name: "projectDate",
@@ -34,32 +33,15 @@ collections:
           timeFormat: "HH:mm",
           format: "YYYY-MM-DD HH:mm",
         }
+      - { label: "Content", name: "description", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["dancer"] }
       - {
-          label: "Publish Date",
-          name: "publishDate",
-          widget: "datetime",
-          dateFormat: "YYYY-MM-DD",
-          timeFormat: "HH:mm",
-          format: "YYYY-MM-DD HH:mm",
+          label: "Gallery",
+          name: "galleryImages",
+          widget: "list",
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
-      - { label: "Cover", name: "thumbnail", widget: "image" }
-      - { label: "Description", name: "description", widget: "markdown" }
-  - name: "categories"
-    label: "Categories"
-    create: true
-    folder: "src/_data/categories"
-    slug: "{{slug}}"
-    extension: "json"
-    format: json
-    fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "category",
-        }
-      - { label: "ID", name: "id", widget: "number" }
-      - { label: "Name", name: "title", widget: "string" }
   - name: "settings"
     label: "Settings"
     delete: false
@@ -71,15 +53,35 @@ collections:
         file: "src/_data/settings.json"
         description: "General Site Settings"
         fields:
-          - { label: "Global title", name: "site_title", widget: "string" }
-          - label: "Post Settings"
-            name: posts
-            widget: "object"
-            fields:
-              - {
-                  label: "Default Thumbnail",
-                  name: thumb,
-                  widget: image,
-                  class: "thumb",
-                  required: false,
-                }
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - {
+              label: "Contact CTA Title",
+              name: "contact_cta_title",
+              widget: "string",
+              default: "don’t be shy, lets talk",
+            }
+          - {
+              label: "Background Gradient",
+              name: "bg_gradient",
+              widget: "list",
+              default: ["#d77e92", "#907ed7", "#7eccd7"],
+            }
+          - {
+              label: "Opening Phrases",
+              name: "opening_phrases",
+              widget: "list",
+              default:
+                [
+                  "artist",
+                  "performer",
+                  "motion-being",
+                  "comunicate",
+                  "to engage",
+                ],
+            }
+          - {
+              label: "Bio > Title",
+              name: "bio_title",
+              widget: "string",
+              default: "Hey you,",
+            }
