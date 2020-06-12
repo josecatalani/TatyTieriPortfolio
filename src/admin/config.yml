@@ -15,36 +15,44 @@ collections:
     files:
       - label: "Projects"
         name: "projects"
-        create: true
-        file: "src/_data/projects.json"
-        extension: "json"
-        format: json
-        widget: "list"
         fields:
-          - {
-              label: "Layout",
-              name: "layout",
-              widget: "hidden",
-              default: "project",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - {
-              label: "Project Date",
-              name: "projectDate",
-              widget: "datetime",
-              dateFormat: "YYYY-MM-DD",
-              timeFormat: "HH:mm",
-              format: "YYYY-MM-DD HH:mm",
-            }
-          - { label: "Content", name: "description", widget: "markdown" }
-          - { label: "Tags", name: "tags", widget: "list", default: ["dancer"] }
-          - {
-              label: "Gallery",
-              name: "galleryImages",
-              widget: "list",
-              summary: "{{fields.image}}",
-              field: { label: Image, name: image, widget: image },
-            }
+          - label: "Projects"
+            name: "projects"
+            format: json
+            widget: "list"
+            extension: "json"
+            create: true
+            file: "src/_data/projects.json"
+            fields:
+              - {
+                  label: "Layout",
+                  name: "layout",
+                  widget: "hidden",
+                  default: "project",
+                }
+              - { label: "Title", name: "title", widget: "string" }
+              - {
+                  label: "Project Date",
+                  name: "projectDate",
+                  widget: "datetime",
+                  dateFormat: "YYYY-MM-DD",
+                  timeFormat: "HH:mm",
+                  format: "YYYY-MM-DD HH:mm",
+                }
+              - { label: "Content", name: "description", widget: "markdown" }
+              - {
+                  label: "Tags",
+                  name: "tags",
+                  widget: "list",
+                  default: ["dancer"],
+                }
+              - {
+                  label: "Gallery",
+                  name: "galleryImages",
+                  widget: "list",
+                  summary: "{{fields.image}}",
+                  field: { label: Image, name: image, widget: image },
+                }
       - label: "Settings"
         name: "settings"
         delete: false
