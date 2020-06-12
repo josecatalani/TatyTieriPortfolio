@@ -58,6 +58,11 @@
       > div {
         flex: 1;
 
+        img {
+          display: block;
+          max-width: 100%;
+        }
+
         pre {
           margin-top: 50px;
           box-shadow: 10px 10px 12px -9px rgba(0, 0, 0, 0.75);

@@ -13,7 +13,7 @@
   --text-color: #ffffff;
   --text-color-hover: #000000;
   --main-background: #f0efef;
-  --main-menu-color: var(--text-color-hover);
+  --main-menu-color: var(--text-color);
   --main-menu-color-hover: var(--text-color-hover);
   --font-title: "manrope", sans-serif;
   --project-title: #000000;
@@ -56,7 +56,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+  color: var(--text-color);
 }
 
 pre {
@@ -219,17 +219,26 @@ ul.virtues-items {
   }
 }
 
+.floaty {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+  a {
+    transition: color 300ms ease-in-out;
+    color: var(--main-menu-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--main-menu-color-hover);
+    }
+  }
+}
+
 #msg-shy {
   transform: rotate(-90deg);
   transform-origin: bottom right;
   right: 80px;
   top: 80px;
-  color: var(--main-menu-color);
-  position: fixed;
-
-  &:hover {
-    color: var(--main-menu-color-hover);
-  }
 }
 
 #menu {
@@ -237,9 +246,6 @@ ul.virtues-items {
   transform-origin: top left;
   left: 80px;
   top: 80px;
-  color: var(--main-menu-color);
-  position: fixed;
-  z-index: 1;
 
   ul {
     padding: 0;
