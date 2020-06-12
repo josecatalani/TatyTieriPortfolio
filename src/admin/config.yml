@@ -19,6 +19,7 @@ collections:
         file: "src/_data/projects.json"
         extension: "json"
         format: json
+        widget: "list"
         fields:
           - {
               label: "Layout",
