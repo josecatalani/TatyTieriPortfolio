@@ -1,5 +1,4 @@
 import "./assets/style/main.scss";
-
 import Scene from "./app/Scene";
 /**
  * App
@@ -14,9 +13,17 @@ async function getSettings() {
   return json;
 }
 
+async function getProjects() {
+  const response = await fetch("data/projects.json");
+  const json = await response.json();
+  return json;
+}
+
 const init = async () => {
-  const settings = await getSettings();
-  console.log({ settings });
-  new Scene();
+  const [settings, projects] = await Promise.all([
+    getSettings(),
+    getProjects(),
+  ]);
+  new Scene(settings, projects);
 };
 init();

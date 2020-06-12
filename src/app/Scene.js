@@ -1,9 +1,14 @@
+import Projects from "./Projects";
 export default class Scene {
-  constructor() {
+  constructor(settings, projects) {
+    this.settings = settings;
+    this.projects = projects;
+
     this.setState();
     this.bindElements();
     this.setInitialAnimations();
     this.setEvents();
+    this.renderProjects();
   }
 
   setState() {
@@ -126,5 +131,9 @@ export default class Scene {
         this.releaseScroll();
       }, 1000);
     }
+  }
+
+  renderProjects() {
+    this.renderedProjects = new Projects(this.projects);
   }
 }

@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+[hidden] {
+  visibility: hidden;
+}
+
 :root {
   --text-color: #ffffff;
   --text-color-hover: #000000;
