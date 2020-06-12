@@ -12,6 +12,26 @@
       "galleryImages": [
         "assets/images/taty-tieri-1.jpg"
       ]
+    },
+    {
+      "layout": "project",
+      "tags": [
+        "professionaldancer",
+        "brazil",
+        "brazilianmoderndance",
+        "marikagidali",
+        "déciootero",
+        "dancecompany",
+        "since2018"
+      ],
+      "projectDate": "2020-06-12 16:09",
+      "title": "cia. ballet stagium",
+      "description": "Lo**rem ipsum dolor sit amet, consecte**tur adipiscing elit. Donec enim odio, vulputate eget maximus in, molestie non turpis. Vestibulum vitae luctus lorem. In eget molestie nisi. Phasellus dignissim libero sit amet purus cursus, in feugiat ex sollicitudin. Praesent semper et lectus a iaculis. Cras ex velit, varius vel eros et, sodales aliquam elit. In ex lacus, posuere nec risus non, porta mattis nulla. Sed eget placerat metus, ut tincidunt sapien. Aenean fermentum neque sit amet egestas blandit. Curabitur tempus mollis nibh nec fermentum. Mauris vehicula fringilla arcu, vel dapibus sapien facilisis eu.\n\nSed cursus sapien nunc, viverra fringilla enim pulvinar et. Maecenas molestie leo ut velit tincidunt pellentesque. Suspendisse potenti. Pellentesque quis turpis varius arcu euismod rutrum. Donec fermentum iaculis suscipit. Suspendisse in vestibulum tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam arcu non varius pellentesque.",
+      "galleryImages": [
+        "assets/images/84451831_10222102541857080_1873271250533482496_o.jpg",
+        "assets/images/img_1066-1-.jpg",
+        "assets/images/72390043_10220828026674997_17519476543062016_o.jpg"
+      ]
     }
   ]
 }
