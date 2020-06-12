@@ -12,11 +12,12 @@ slug:
 collections:
   - name: "pages"
     label: "Pages"
+    folder: "src/_data/"
     files:
       - label: "Projects"
         name: "projects"
         create: true
-        file: "src/_data/projects.json"
+        file: "projects.json"
         extension: "json"
         format: json
         fields:
@@ -47,43 +48,41 @@ collections:
       - label: "Settings"
         name: "settings"
         delete: false
+        file: "settings.json"
+        extension: "json"
+        format: json
         editor:
           preview: false
-        files:
-          - name: "general"
-            label: "Site Settings"
-            file: "src/_data/settings.json"
-            description: "General Site Settings"
-            fields:
-              - { label: "Site Title", name: "site_title", widget: "string" }
-              - {
-                  label: "Contact CTA Title",
-                  name: "contact_cta_title",
-                  widget: "string",
-                  default: "don’t be shy, lets talk",
-                }
-              - {
-                  label: "Background Gradient",
-                  name: "bg_gradient",
-                  widget: "list",
-                  default: ["#d77e92", "#907ed7", "#7eccd7"],
-                }
-              - {
-                  label: "Opening Phrases",
-                  name: "opening_phrases",
-                  widget: "list",
-                  default:
-                    [
-                      "artist",
-                      "performer",
-                      "motion-being",
-                      "comunicate",
-                      "to engage",
-                    ],
-                }
-              - {
-                  label: "Bio > Title",
-                  name: "bio_title",
-                  widget: "string",
-                  default: "Hey you,",
-                }
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - {
+              label: "Contact CTA Title",
+              name: "contact_cta_title",
+              widget: "string",
+              default: "don’t be shy, lets talk",
+            }
+          - {
+              label: "Background Gradient",
+              name: "bg_gradient",
+              widget: "list",
+              default: ["#d77e92", "#907ed7", "#7eccd7"],
+            }
+          - {
+              label: "Opening Phrases",
+              name: "opening_phrases",
+              widget: "list",
+              default:
+                [
+                  "artist",
+                  "performer",
+                  "motion-being",
+                  "comunicate",
+                  "to engage",
+                ],
+            }
+          - {
+              label: "Bio > Title",
+              name: "bio_title",
+              widget: "string",
+              default: "Hey you,",
+            }
