@@ -58,6 +58,39 @@
       > div {
         flex: 1;
 
+        pre {
+          margin-top: 50px;
+          box-shadow: 10px 10px 12px -9px rgba(0, 0, 0, 0.75);
+        }
+
+        blockquote {
+          border-left: 4px solid white;
+          padding: 25px;
+          margin: 50px 0px;
+
+          p {
+            margin-top: 15px;
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+        }
+
+        ul,
+        ol {
+          list-style: inside;
+          margin-top: 15px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          li {
+            margin: 5px 0px;
+          }
+        }
+
         p {
           margin-top: 50px;
 
@@ -74,6 +107,8 @@
       .project-tags {
         ul {
           list-style: none;
+          position: sticky;
+          top: 108px;
 
           li {
             display: inline-block;
