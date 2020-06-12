@@ -16,7 +16,7 @@ collections:
       - label: "Projects"
         name: "projects"
         create: true
-        file: "projects.json"
+        file: "src/_data/projects.json"
         extension: "json"
         format: json
         fields:
@@ -47,7 +47,7 @@ collections:
       - label: "Settings"
         name: "settings"
         delete: false
-        file: "settings.json"
+        file: "src/_data/settings.json"
         extension: "json"
         format: json
         editor:
