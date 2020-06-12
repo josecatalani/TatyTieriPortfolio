@@ -11,7 +11,7 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "../static") },
+      { from: path.resolve(__dirname, "../src/_data"), to: "data" },
       {
         from: path.resolve(__dirname, "../src/admin"),
         to: "admin",
