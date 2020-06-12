@@ -12,7 +12,6 @@ slug:
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "src/_data/"
     files:
       - label: "Projects"
         name: "projects"
