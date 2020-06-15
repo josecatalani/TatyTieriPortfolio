@@ -5,17 +5,18 @@ export default class Scene {
     this.projects = projects;
 
     this.setState();
+    this.renderContent();
     this.bindElements();
     this.setInitialAnimations();
     this.setEvents();
-    this.renderProjects();
+
+    document.title = settings.site_title;
   }
 
   setState() {
     this.scrollDocLocked = true;
     this.enteredSite = false;
     this.activePanelIndex = 0;
-    this.colors = ["none", "purple", "cyan"];
   }
 
   releaseScroll() {
@@ -60,22 +61,20 @@ export default class Scene {
     this.animateChangingPanel();
   }
 
-  getBackgroundColorClass() {
-    return this.colors[this.activePanelIndex];
-  }
-
   animateChangingPanel() {
     const panel = this.getActivePanel();
     const oldPanel = this.getOldPanel();
     this.enteredSite = true;
     this.releaseScroll();
-
-    oldPanel.classList.add("old");
-    this.main.classList.remove(...this.colors);
-    this.main.classList.add(this.getBackgroundColorClass());
     this.window.scrollTo(0, 0);
-    setTimeout(() => panel.classList.add("active"), 500);
-    setTimeout(() => oldPanel.classList.remove("old", "active"), 1000);
+
+    oldPanel.classList.remove("active");
+    oldPanel.classList.add("old");
+    setTimeout(() => {
+      oldPanel.style = "";
+      panel.style.display = "block";
+      panel.classList.add("active");
+    }, 1000);
   }
 
   bindElements() {
@@ -97,6 +96,8 @@ export default class Scene {
   }
 
   setInitialAnimations() {
+    const panel = this.getActivePanel();
+    panel.style.display = "block";
     setTimeout(
       () =>
         [...this.virtuesItems].map((virtue) => virtue.classList.add("start")),
@@ -135,5 +136,26 @@ export default class Scene {
 
   renderProjects() {
     this.renderedProjects = new Projects(this.projects);
+  }
+
+  renderHome() {
+    const template = document.getElementById("home-template").innerHTML;
+    const rendered = Mustache.render(template, { ...this.settings });
+    document.getElementById("render-home").innerHTML = rendered;
+  }
+
+  renderBio() {
+    const template = document.getElementById("bio-template").innerHTML;
+    const rendered = Mustache.render(template, { ...this.settings });
+    document.getElementById("render-bio").innerHTML = rendered;
+  }
+
+  renderContent() {
+    document.querySelector(
+      "#msg-shy a"
+    ).innerHTML = this.settings.contact_cta_title;
+    this.renderProjects();
+    this.renderHome();
+    this.renderBio();
   }
 }

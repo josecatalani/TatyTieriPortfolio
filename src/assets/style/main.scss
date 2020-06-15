@@ -44,17 +44,6 @@ body {
   }
 }
 
-.title {
-  font-size: 68px;
-  line-height: 93px;
-}
-
-.display {
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 38px;
-}
-
 a {
   color: var(--text-color);
 }
@@ -308,22 +297,40 @@ figure {
     font-size: 120px;
   }
 }
-
 .panel {
   width: 100%;
-  position: absolute;
   opacity: 0;
-  transform: translateY(5%);
-  transition: transform 500ms ease-out, opacity 500ms linear;
-  visibility: hidden;
+  display: none;
+
   &.active {
-    visibility: visible;
-    transform: translateY(0%);
-    opacity: 1;
+    animation: show 500ms ease normal;
+    animation-fill-mode: forwards;
   }
+
   &.old {
-    transform: translateY(-5%);
-    opacity: 0;
+    animation: hide 500ms ease normal;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      display: block;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes hide {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-5%);
+      height: 0;
+    }
   }
 }
 

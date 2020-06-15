@@ -28,65 +28,10 @@
         </div>
       </div>
       <!-- Home -->
-      <section id="home" class="active panel">
-        <div id="scroll"><p>scroll</p></div>
-        <section id="virtues">
-          <ul class="virtues-items">
-            <li>
-              <span>artist</span>
-            </li>
-            <li>
-              <span>performer</span>
-            </li>
-            <li>
-              <span>motion-being</span>
-            </li>
-            <li>
-              <span>comunicate to</span>
-            </li>
-            <li>
-              <span>engage</span>
-            </li>
-          </ul>
-        </section>
-      </section>
+      <div id="render-home"></div>
       <!-- /Home -->
       <!-- Bio -->
-      <section id="bio" class="panel">
-        <header>
-          <figure>
-            <img src="assets/images/taty.jpg" />
-            <figcaption><span>bio</span></figcaption>
-          </figure>
-        </header>
-        <section class="body">
-          <div>
-            <p class="title">hey you,</p>
-            <p class="display">
-              Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>.
-              Nulla sollicitudin porta egestas. Curabitur iaculis nec urna
-              semper volutpat. <b>Cras dapibus gravida tellus</b> eget
-              dignissim. Morbi condimentum congue magna, at blandit nunc congue
-              mattis.
-            </p>
-          </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              sollicitudin porta egestas. Curabitur iaculis nec urna semper
-              volutpat. Cras dapibus gravida tellus eget dignissim. Morbi
-              condimentum congue magna, at blandit nunc congue mattis.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              sollicitudin porta egestas. Curabitur iaculis nec urna semper
-              volutpat. Cras dapibus gravida tellus eget dignissim. Morbi
-              condimentum congue magna, at blandit nunc congue mattis.
-            </p>
-          </div>
-        </section>
-      </section>
+      <div id="render-bio"></div>
       <!-- /Bio -->
       <!-- Projects -->
       <section id="projects" class="panel">
@@ -101,20 +46,6 @@
         </section>
       </section>
       <!-- /Projects -->
-      <!-- Works -->
-      <section id="works" class="panel">
-        <header>
-          <figure>
-            <img src="assets/images/projects.jpg" />
-            <figcaption><span>works</span></figcaption>
-          </figure>
-        </header>
-        <section class="body">
-          <div id="render-works"></div>
-        </section>
-      </section>
-      <!-- /Works -->
-    </main>
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {
@@ -127,6 +58,39 @@
       }
     </script>
     <div hidden>
+      <script id="bio-template" type="x-tmpl-mustache">
+        <section id="bio" class="panel">
+          <header>
+            <figure>
+              <img src="assets/images/taty.jpg" />
+              <figcaption><span>bio</span></figcaption>
+            </figure>
+          </header>
+          <section class="body">
+            <div>
+              <p>{{bio_title}}</p>
+              <p>{{bio_title}}</p>
+            </div>
+            <div>{{bio_title}}</div>
+          </section>
+        </section>
+      </script>
+      <script id="home-template" type="x-tmpl-mustache">
+        <section id="home" class="active panel">
+          <div id="scroll">
+            <p>scroll</p>
+          </div>
+          <section id="virtues">
+            <ul class="virtues-items">
+              {{#opening_phrases}}
+              <li>
+                <span>{{.}}</span>
+              </li>
+              {{/opening_phrases}}
+            </ul>
+          </section>
+        </section>
+      </script>
       <script id="project-item" type="x-tmpl-mustache">
         {{#projects}}
         <div class="project-item">
@@ -138,17 +102,16 @@
             <div class="project-title">
               <h2>{{title}}</h2>
             </div>
-          </header>
-          <section class="body">
             <div class="project-tags">
               <ul>
                 {{#tags}}
-                <li>
-                  #{{.}}
-                </li>
+                <li>#{{.}}</li>
                 {{/tags}}
               </ul>
             </div>
+          </header>
+          <section class="body">
+            <div></div>
             <div>
               {{{description}}}
             </div>

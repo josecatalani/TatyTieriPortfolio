@@ -94,3 +94,13 @@ collections:
               widget: "string",
               default: "Hey you,",
             }
+          - {
+              label: "Bio > Sub title",
+              name: "bio_subtitle",
+              widget: "markdown",
+            }
+          - {
+              label: "Bio > Description",
+              name: "bio_description",
+              widget: "markdown",
+            }
