@@ -116,6 +116,13 @@
               {{{description}}}
             </div>
           </section>
+          <div class="gallery">
+            <div class="gallery-mask"></div>
+            <div class="gallery-controls">ver galeria</div>
+            {{#galleryImages}}
+            <figure class="gallery-image"><img src="{{.}}"/></figure>
+            {{/galleryImages}}
+          </div>
         </div>
         {{/projects}}
       </script>

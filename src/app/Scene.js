@@ -1,4 +1,5 @@
 import Projects from "./Projects";
+import Slideshow from "./Slideshow";
 export default class Scene {
   constructor(settings, projects) {
     this.settings = settings;
@@ -9,6 +10,7 @@ export default class Scene {
     this.bindElements();
     this.setInitialAnimations();
     this.setEvents();
+    this.setSlideShows();
 
     document.title = settings.site_title;
   }
@@ -17,6 +19,10 @@ export default class Scene {
     this.scrollDocLocked = true;
     this.enteredSite = false;
     this.activePanelIndex = 0;
+  }
+  
+  setSlideShows() {
+    this.slideshow = new Slideshow()
   }
 
   releaseScroll() {
@@ -38,6 +44,7 @@ export default class Scene {
 
   goToPanel(panelId) {
     const index = this.panels.findIndex((panel) => panelId === panel.id);
+    if (index === this.activePanelIndex) return;
     this.setActivePanel(index);
     this.animateChangingPanel();
   }
@@ -68,13 +75,18 @@ export default class Scene {
     this.releaseScroll();
     this.window.scrollTo(0, 0);
 
-    oldPanel.classList.remove("active");
-    oldPanel.classList.add("old");
-    setTimeout(() => {
+    const endAnimationFunction = () => {
       oldPanel.style = "";
       panel.style.display = "block";
+      oldPanel.classList.remove("old");
       panel.classList.add("active");
-    }, 1000);
+      oldPanel.removeEventListener("animationend", endAnimationFunction);
+    };
+
+    oldPanel.classList.remove("active");
+    oldPanel.classList.add("old");
+    oldPanel.classList.add("old");
+    oldPanel.addEventListener("animationend", endAnimationFunction);
   }
 
   bindElements() {
@@ -83,15 +95,11 @@ export default class Scene {
     this.virtuesItems = document.querySelectorAll(".virtues-items");
     this.menu = document.getElementById("menu");
     this.menuLink = document.querySelectorAll("#menu a");
-    this.homePanel = document.getElementById("home");
-    this.projectsPanel = document.getElementById("projects");
-    this.bioPanel = document.getElementById("bio");
-    this.worksPanel = document.getElementById("works");
     this.panels = [
-      this.homePanel,
-      this.bioPanel,
-      this.projectsPanel,
-      this.worksPanel,
+      document.getElementById("home"),
+      document.getElementById("bio"),
+      document.getElementById("projects"),
+      document.getElementById("works"),
     ];
   }
 
@@ -108,14 +116,18 @@ export default class Scene {
   setEvents() {
     this.window.addEventListener("wheel", (e) => this.onScroll(e));
 
-    [...this.menuLink].forEach((menuLink) =>
+    [...this.menuLink].forEach((menuLink) => {
       menuLink.addEventListener("click", (e) => {
         e.preventDefault();
+        [...this.menuLink].forEach((menuItem) =>
+          menuItem.classList.remove("selected")
+        );
+        menuLink.classList.add("selected");
         const panelToGo = menuLink.getAttribute("href").split("/").pop();
         this.goToPanel(panelToGo);
         return false;
-      })
-    );
+      });
+    });
   }
 
   onScroll(e) {

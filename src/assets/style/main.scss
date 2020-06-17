@@ -250,8 +250,13 @@ ul.virtues-items {
         font-size: 18px;
         font-weight: 400;
         color: var(--main-menu-color);
+        border-bottom: 2px solid transparent;
+        padding-bottom: 5px;
+        font-weight: bold;
 
+        &.selected,
         &:hover {
+          text-decoration: underline;
           color: var(--main-menu-color-hover);
         }
       }
@@ -315,11 +320,9 @@ figure {
   @keyframes show {
     0% {
       opacity: 0;
-      display: block;
     }
     100% {
       opacity: 1;
-      transform: translateY(0%);
     }
   }
 
@@ -328,7 +331,6 @@ figure {
       opacity: 1;
     }
     100% {
-      transform: translateY(-5%);
       height: 0;
     }
   }
@@ -340,3 +342,4 @@ figure {
 
 @import "./bio.scss";
 @import "./projects.scss";
+@import "./gallery.scss";
