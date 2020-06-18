@@ -20,9 +20,9 @@ export default class Scene {
     this.enteredSite = false;
     this.activePanelIndex = 0;
   }
-  
+
   setSlideShows() {
-    this.slideshow = new Slideshow()
+    this.slideshow = new Slideshow();
   }
 
   releaseScroll() {
@@ -157,6 +157,11 @@ export default class Scene {
   }
 
   renderBio() {
+    const converter = new showdown.Converter();
+    this.settings = {
+      bio_description: converter.makeHtml(this.settings.bio_description),
+      ...this.settings,
+    };
     const template = document.getElementById("bio-template").innerHTML;
     const rendered = Mustache.render(template, { ...this.settings });
     document.getElementById("render-bio").innerHTML = rendered;

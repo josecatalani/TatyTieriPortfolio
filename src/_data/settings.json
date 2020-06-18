@@ -1,14 +1,11 @@
 {
   "site_title": "taty tieri",
   "contact_cta_title": "não seja tímido, vamos conversar",
-  "bg_gradient": [
-    "#d77e92",
-    "#907ed7",
-    "#7eccd7"
-  ],
+  "bg_gradient": ["#d77e92", "#907ed7", "#7eccd7"],
   "opening_phrases": [
     "artista",
     "performer",
+    "comunicóloga",
     "ser em movimento"
   ],
   "bio_title": "Olá,",

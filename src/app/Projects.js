@@ -14,6 +14,7 @@ export default class Projects {
       projectIndex: function () {
         return (index + 1).toString().padStart(3, "0");
       },
+      showGallery: !!(this.galleryImages || []).length,
     }));
     var template = document.getElementById("project-item").innerHTML;
     var rendered = Mustache.render(template, { projects: projectItems });

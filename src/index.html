@@ -69,9 +69,9 @@
           <section class="body">
             <div>
               <p>{{bio_title}}</p>
-              <p>{{bio_title}}</p>
+              <p>{{bio_subtitle}}</p>
             </div>
-            <div>{{bio_title}}</div>
+            <div>{{bio_description}}</div>
           </section>
         </section>
       </script>
@@ -116,6 +116,7 @@
               {{{description}}}
             </div>
           </section>
+          {{#showGallery}}
           <div class="gallery">
             <div class="gallery-mask"></div>
             <div class="gallery-controls">ver galeria</div>
@@ -123,6 +124,7 @@
             <figure class="gallery-image"><img src="{{.}}"/></figure>
             {{/galleryImages}}
           </div>
+          {{/showGallery}}
         </div>
         {{/projects}}
       </script>
