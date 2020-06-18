@@ -85,21 +85,6 @@
           box-shadow: 10px 10px 12px -9px rgba(0, 0, 0, 0.75);
         }
 
-        blockquote {
-          border-left: 4px solid white;
-          padding: 25px;
-          margin: 50px 0px;
-
-          p {
-            margin-top: 15px;
-            font-weight: normal;
-
-            &:first-child {
-              margin-top: 0;
-            }
-          }
-        }
-
         ul,
         ol {
           list-style: inside;
