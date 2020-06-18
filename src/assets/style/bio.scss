@@ -11,23 +11,29 @@
         margin-right: 170px;
       }
 
-      p {
-        margin-top: 100px;
+      &:first-of-type {
+        p {
+          &:first-child {
+            color: black;
+            text-transform: capitalize;
+            margin-bottom: 129px;
+            font-size: 68px;
+            line-height: 93px;
+          }
 
+          &:nth-child(2) {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 38px;
+          }
+        }
+      }
+
+      p {
+        margin-top: 50px;
         &:first-child {
           margin-top: 0;
-          color: black;
-          text-transform: capitalize;
-          margin-bottom: 129px;
-          font-size: 68px;
-          line-height: 93px;
-        }
-
-        &:nth-child(2) {
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 28px;
-          line-height: 38px;
         }
       }
     }

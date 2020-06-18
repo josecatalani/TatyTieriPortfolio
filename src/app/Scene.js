@@ -159,8 +159,8 @@ export default class Scene {
   renderBio() {
     const converter = new showdown.Converter();
     this.settings = {
-      bio_description: converter.makeHtml(this.settings.bio_description),
       ...this.settings,
+      bio_description: converter.makeHtml(this.settings.bio_description),
     };
     const template = document.getElementById("bio-template").innerHTML;
     const rendered = Mustache.render(template, { ...this.settings });
