@@ -29,6 +29,23 @@
         "assets/images/entreparedes2.png",
         "assets/images/entreparedes2.png"
       ]
+    },
+    {
+      "layout": "project",
+      "tags": [
+        "balletstagium",
+        "anos20",
+        "dança",
+        "fonfon"
+      ],
+      "projectDate": "2020-06-26 21:57",
+      "galleryImages": [
+        "assets/images/fon-fon-sergio-cardoso-2.jpg",
+        "assets/images/fon-fon-sergio-cardoso-9.jpg",
+        "assets/images/fon-fon-sergio-cardoso-3.jpg"
+      ],
+      "title": "FON FON! com Companhia Ballet Stagium",
+      "description": "Uma obra sustentável em tempos de ostentação\n\nMarika Gidali e Décio Otéro achatam a realidade em uma charge dos anos 20."
     }
   ]
 }
