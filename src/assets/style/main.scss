@@ -153,10 +153,14 @@ ul.virtues-items {
   display: block;
   display: flex;
   flex-direction: column;
-  padding-left: 13.47vw;
-  padding-right: 9.05vw;
-  padding-top: 7.81vh;
-  height: calc(100vh - 27.08vh);
+  height: 100vh;
+
+  @media (min-width: 768px) {
+    padding-left: 13.47vw;
+    padding-right: 9.05vw;
+    padding-top: 7.81vh;
+    height: calc(100vh - 27.08vh);
+  }
 
   li {
     flex: 1;
@@ -224,9 +228,9 @@ ul.virtues-items {
 }
 
 .floaty {
-  position: fixed;
-  cursor: pointer;
   z-index: 1;
+  position: absolute;
+  cursor: pointer;
   a {
     transition: color 300ms ease-in-out;
     color: var(--main-menu-color);
@@ -236,20 +240,40 @@ ul.virtues-items {
       color: var(--main-menu-color-hover);
     }
   }
+
+  @media (min-width: 768px) {
+    position: fixed;
+
+    a {
+      font-size: 14px;
+    }
+  }
 }
 
 #msg-shy {
-  transform: rotate(-90deg);
-  transform-origin: bottom right;
-  right: 80px;
-  top: 80px;
+  right: 20px;
+  top: 25px;
+  width: 30vw;
+  text-align: right;
+  @media (min-width: 768px) {
+    width: auto;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    right: 80px;
+    top: 80px;
+    text-align: left;
+  }
 }
 
 #menu {
-  transform: rotate(90deg);
-  transform-origin: top left;
-  left: 80px;
-  top: 80px;
+  left: 20px;
+  top: 30px;
+  @media (min-width: 768px) {
+    transform: rotate(90deg);
+    transform-origin: top left;
+    left: 80px;
+    top: 80px;
+  }
 
   ul {
     padding: 0;
@@ -284,15 +308,20 @@ ul.virtues-items {
 }
 
 #scroll {
-  transform: rotate(-90deg);
   cursor: pointer;
-  right: 80px;
-  bottom: 80px;
-  position: fixed;
   color: var(--main-menu-color);
+  right: 20px;
+  bottom: 30px;
+  position: absolute;
 
   &:hover {
     color: var(--main-menu-color-hover);
+  }
+  @media (min-width: 768px) {
+    transform: rotate(-90deg);
+    right: 80px;
+    bottom: 80px;
+    position: fixed;
   }
 }
 
@@ -314,7 +343,11 @@ figure {
   span {
     color: white;
     font-weight: bold;
-    font-size: 120px;
+    font-size: 60px;
+
+    @media (min-width: 768px) {
+      font-size: 120px;
+    }
   }
 }
 .panel {
