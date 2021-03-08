@@ -1,4 +1,3 @@
-import "./assets/style/main.scss";
 import Scene from "./app/Scene";
 /**
  * App
