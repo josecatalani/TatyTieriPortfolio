@@ -10,17 +10,18 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "../src/_data"), to: "data" },
-      {
-        from: path.resolve(__dirname, "../src/admin"),
-        to: "admin",
-      },
-      {
-        from: path.resolve(__dirname, "../src/assets/images"),
-        to: "assets/images",
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns:[
+        { from: path.resolve(__dirname, "../src/_data"), to: "data" },
+        {
+          from: path.resolve(__dirname, "../src/admin"),
+          to: "admin",
+        },
+        {
+          from: path.resolve(__dirname, "../src/assets/images"),
+          to: "assets/images",
+        }
+    ]}),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/index.html"),
       minify: true,
