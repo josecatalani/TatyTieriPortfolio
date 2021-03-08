@@ -1,5 +1,3 @@
-@import "./font.scss";
-
 * {
   padding: 0;
   margin: 0;
@@ -15,7 +13,7 @@
   --main-background: #f0efef;
   --main-menu-color: var(--text-color);
   --main-menu-color-hover: var(--text-color-hover);
-  --font-title: "manrope", sans-serif;
+  --font-title: 'Manrope', sans-serif;
   --project-title: #000000;
   --project-tags: #fafafa;
 }
